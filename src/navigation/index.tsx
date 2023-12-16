@@ -1,10 +1,9 @@
-import React, {useEffect} from 'react';
+import React, {useContext, useEffect} from 'react';
 import {useTranslation} from 'react-i18next';
 import {StyleSheet, View} from 'react-native';
 
-import {useQuery} from '@apollo/client';
 import Textt from '@app/components/atoms/Textt';
-import {AllStarWarsFilmsQuery, GET_ALL_STARWARS_FILMS} from '@app/graphql';
+import {StarWarsFilmsContext} from '@app/contexts';
 import {useTheme} from '@react-navigation/native';
 import {StatusBar} from 'expo-status-bar';
 
@@ -15,13 +14,11 @@ const Navigation = () => {
 
   const {t} = useTranslation();
 
-  const {loading, error, data} = useQuery<AllStarWarsFilmsQuery>(
-    GET_ALL_STARWARS_FILMS,
-  );
+  const {starWarsFilms} = useContext(StarWarsFilmsContext);
 
   useEffect(() => {
-    console.log(data?.allFilms.films);
-  }, [data]);
+    console.log(starWarsFilms);
+  }, [starWarsFilms]);
 
   return (
     <View style={styles.container}>

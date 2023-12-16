@@ -2,6 +2,7 @@ import React from 'react';
 
 import {ApolloProvider} from '@apollo/client';
 import {client} from '@app/api';
+import {StarWarsFilmsProvider} from '@app/contexts';
 import Navigation from '@app/navigation';
 import theme from '@app/theme';
 import {
@@ -22,7 +23,9 @@ export default function App() {
   return (
     <ApolloProvider client={client}>
       <NavigationContainer theme={theme}>
-        <Navigation />
+        <StarWarsFilmsProvider>
+          <Navigation />
+        </StarWarsFilmsProvider>
       </NavigationContainer>
     </ApolloProvider>
   );

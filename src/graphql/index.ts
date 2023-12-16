@@ -1,6 +1,6 @@
 import {gql} from '@apollo/client';
 
-type StarWarsFilm = {
+export type StarWarsFilm = {
   title: string;
 };
 
