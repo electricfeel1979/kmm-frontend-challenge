@@ -1,5 +1,7 @@
 import React from 'react';
 
+import {ApolloProvider} from '@apollo/client';
+import {client} from '@app/api';
 import Navigation from '@app/navigation';
 import theme from '@app/theme';
 import {
@@ -18,8 +20,10 @@ export default function App() {
   }
 
   return (
-    <NavigationContainer theme={theme}>
-      <Navigation />
-    </NavigationContainer>
+    <ApolloProvider client={client}>
+      <NavigationContainer theme={theme}>
+        <Navigation />
+      </NavigationContainer>
+    </ApolloProvider>
   );
 }

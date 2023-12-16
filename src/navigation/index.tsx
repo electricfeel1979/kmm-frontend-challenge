@@ -1,17 +1,27 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {useTranslation} from 'react-i18next';
 import {StyleSheet, View} from 'react-native';
 
+import {useQuery} from '@apollo/client';
 import Textt from '@app/components/atoms/Textt';
+import {AllStarWarsFilmsQuery, GET_ALL_STARWARS_FILMS} from '@app/graphql';
 import {useTheme} from '@react-navigation/native';
 import {StatusBar} from 'expo-status-bar';
 
-import '@app/i18n'; // Make sure to import your i18n configuration
+import '@app/i18n';
 
 const Navigation = () => {
   const {colors} = useTheme();
 
   const {t} = useTranslation();
+
+  const {loading, error, data} = useQuery<AllStarWarsFilmsQuery>(
+    GET_ALL_STARWARS_FILMS,
+  );
+
+  useEffect(() => {
+    console.log(data);
+  }, [data]);
 
   return (
     <View style={styles.container}>
