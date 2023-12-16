@@ -1,0 +1,14 @@
+{
+    "formTitle": "My form",
+    "errorMessages": {
+      "firstNameRequired": "You need to enter a first name.",
+      "lastNameRequired": "You need to enter a last name."
+    },
+    "fieldLabels": {
+      "firstName": "First name",
+      "lastName": "Last name",
+      "favoriteMovie": "Favorite Star Wars movie"
+    },
+    "submitButton": "Submit"
+}
+  
