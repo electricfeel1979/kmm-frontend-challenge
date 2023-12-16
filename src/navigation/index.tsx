@@ -20,7 +20,7 @@ const Navigation = () => {
   );
 
   useEffect(() => {
-    console.log(data);
+    console.log(data?.allFilms.films);
   }, [data]);
 
   return (
