@@ -1,12 +1,12 @@
 import React from 'react';
-import {StyleSheet, View} from 'react-native';
 
-import Textt from '@app/components/atoms/Textt';
+import Navigation from '@app/navigation';
+import theme from '@app/theme';
 import {
   Roboto_400Regular,
   useFonts as useRoboto,
 } from '@expo-google-fonts/roboto';
-import {StatusBar} from 'expo-status-bar';
+import {NavigationContainer} from '@react-navigation/native';
 
 export default function App() {
   const [robotoLoaded] = useRoboto({
@@ -18,18 +18,8 @@ export default function App() {
   }
 
   return (
-    <View style={styles.container}>
-      <Textt>Open up App.tsx to start working on your app!</Textt>
-      <StatusBar style="auto" />
-    </View>
+    <NavigationContainer theme={theme}>
+      <Navigation />
+    </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});

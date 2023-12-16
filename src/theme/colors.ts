@@ -13,4 +13,6 @@ export const colors = {
   placeholder: '#BDBDBD',
   light: '#F5F5F5',
   dark: '#212121',
+  card: '#FFFFFF',
+  notification: '#FF0000',
 };
